@@ -3,7 +3,7 @@ with
         select * 
         from  {{source('erp_adventure_works','PRODUCTCATEGORY')}}
     )
-    ,rename as (
+    ,renomeado as (
         select
             cast(PRODUCTCATEGORYID as int) as pk_id_produto_categoria
             ,cast(NAME as varchar) as categoria_nome
@@ -11,4 +11,5 @@ with
         from categoria
     )
 
-select * from rename
+select * 
+from renomeado

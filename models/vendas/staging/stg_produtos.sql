@@ -5,7 +5,7 @@ with
 
     )
 
-    , rename as (
+    , renomeado as (
         select
             cast(PRODUCTID as int) as pk_id_produto
             ,cast(PRODUCTSUBCATEGORYID as int) as fk_id_produto_subcategoria
@@ -15,7 +15,7 @@ with
             ,cast(STANDARDCOST as number(18,2)) as produto_custo_padrao
             ,cast(LISTPRICE  as number(18,2)) as produto_preco_listado 
             ,cast(MODIFIEDDATE as date) as produto_data_modificacao
-            ,cast(NAME as strig) as produto_nome
+            ,cast(NAME as string) as produto_nome
             ,cast(PRODUCTNUMBER as varchar) as produto_numero_serie
             ,cast(MAKEFLAG as boolean) as produto_make_flag
             ,cast(FINISHEDGOODSFLAG as boolean) as produto_make_flag_finalizado
@@ -36,4 +36,4 @@ with
     )
 
 select * 
-from rename
+from renomeado

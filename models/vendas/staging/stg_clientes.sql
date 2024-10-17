@@ -3,7 +3,7 @@ with
         select * 
         from  {{source('erp_adventure_works','CUSTOMER')}}
     )
-    ,rename as (
+    ,renomeado as (
         select
             cast(CUSTOMERID as int) as pk_id_cliente
             ,cast(PERSONID as int) as fk_id_pessoa
@@ -14,4 +14,5 @@ with
         from clientes
 )
 
-select * from rename
+select * 
+from renomeado

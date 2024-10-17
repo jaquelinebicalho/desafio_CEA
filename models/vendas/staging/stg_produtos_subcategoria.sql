@@ -4,7 +4,7 @@ with
         from  {{source('erp_adventure_works','PRODUCTSUBCATEGORY')}}
 
     )
-    ,rename as(
+    ,renomeado as(
         select 
              cast(PRODUCTSUBCATEGORYID as int) as pk_id_produto_subcategoria
             ,cast(PRODUCTCATEGORYID as int) as fk_id_produto_categoria
@@ -13,4 +13,5 @@ with
         from subcategoria
 )
 
-select * from rename
+select * 
+from renomeado

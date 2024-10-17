@@ -6,7 +6,6 @@ sources:
     database: FEA24_9
     schema: RAW_ADVENTURE_WORKS
     tables:
-
       - name: PRODUCT
         description: 'Tabela com dados gerais sobre os produtos da Adventure Works'
         columns:
@@ -14,7 +13,6 @@ sources:
             tests:
               - not_null
               - unique  
-
       - name: PRODUCTCATEGORY
         description: 'Tabela que classifica os produtos em categorias'
         columns:
@@ -22,7 +20,6 @@ sources:
             tests:
               - not_null
               - unique  
-
       - name: PRODUCTSUBCATEGORY
         description: 'Tabela que classifica os produtos em subcategorias'
         columns:
@@ -37,7 +34,6 @@ sources:
             tests:
               - not_null
               - unique  
-
       - name: CREDITCARD
         description: 'Tabela que contém os detalhes dos cartões de crédito dos clientes'
         columns:
@@ -45,7 +41,6 @@ sources:
             tests:
               - not_null
               - unique  
-
       - name: PERSON
         description: 'Tabela com dados das pessoas físicas registradas'
         columns:
@@ -53,7 +48,6 @@ sources:
             tests:
               - not_null
               - unique  
-
       - name: ADDRESS
         description: 'Tabela com os endereços dos clientes e fornecedores'
         columns:
@@ -61,7 +55,6 @@ sources:
             tests:
               - not_null
               - unique                
-
       - name: COUNTRYREGION
         description: 'Tabela com informações sobre regiões e países'
         columns:
@@ -69,7 +62,6 @@ sources:
             tests:
               - not_null
               - unique          
-
       - name: STATEPROVINCE
         description: 'Tabela com dados sobre estados e províncias'
         columns:
@@ -90,7 +82,6 @@ sources:
           - name: SALESORDERID
             tests:
               - not_null
-           
       - name: SALESORDERHEADER
         description: 'Tabela com os principais dados dos pedidos de venda'
         columns:
@@ -101,7 +92,6 @@ sources:
           - name: CUSTOMERID
             tests:
               - not_null
-            
       - name: SALESORDERHEADERSALESREASON
         description: 'Tabela que relaciona os pedidos(salesorderid) de venda e seus motivos/razões'
         columns:
@@ -111,15 +101,13 @@ sources:
           - name: SalesOrderID
             tests:
               - not_null
-                  
       - name: SALESPERSON
         description: 'Tabela com dados sobre os vendedores da adventure works'
         columns:
           - name: BUSINESSENTITYID
             tests:
               - not_null
-              - unique  
-
+              - unique 
       - name: SALESREASON
         description: 'Tabela com dados dos motivos/razões das realizações de vendas'
         columns:
@@ -127,9 +115,8 @@ sources:
             tests:
               - not_null
               - unique  
-
       - name: VENDOR
-        description: 'Tabela com dados dos fornecedores da adventure_works'
+        description: 'Tabela com dados dos fornecedores da adventure works'
         columns:
           - name: BUSINESSENTITYID
             tests:
