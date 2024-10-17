@@ -1,0 +1,137 @@
+version: 2
+
+sources:
+  - name: erp_adventure_works
+    description: Fonte do sistema ERP da empresa Adventure Works, com os dados de operação, vendas, transações, empregados, clientes e afins
+    database: FEA24_9
+    schema: RAW_ADVENTURE_WORKS
+    tables:
+
+      - name: PRODUCT
+        description: 'Tabela com dados gerais sobre os produtos da Adventure Works'
+        columns:
+          - name: PRODUCTID
+            tests:
+              - not_null
+              - unique  
+
+      - name: PRODUCTCATEGORY
+        description: 'Tabela que classifica os produtos em categorias'
+        columns:
+          - name: PRODUCTCATEGORYID
+            tests:
+              - not_null
+              - unique  
+
+      - name: PRODUCTSUBCATEGORY
+        description: 'Tabela que classifica os produtos em subcategorias'
+        columns:
+          - name: PRODUCTSUBCATEGORYID
+            tests:
+              - not_null
+              - unique  
+      - name: CUSTOMER
+        description: 'Tabela com dados sobre os clientes da empresa'
+        columns: 
+          - name: CUSTOMERID
+            tests:
+              - not_null
+              - unique  
+
+      - name: CREDITCARD
+        description: 'Tabela que contém os detalhes dos cartões de crédito dos clientes'
+        columns:
+          - name: CREDITCARDID
+            tests:
+              - not_null
+              - unique  
+
+      - name: PERSON
+        description: 'Tabela com dados das pessoas físicas registradas'
+        columns:
+          - name: BUSINESSENTITYID
+            tests:
+              - not_null
+              - unique  
+
+      - name: ADDRESS
+        description: 'Tabela com os endereços dos clientes e fornecedores'
+        columns:
+          - name: ADDRESSID
+            tests:
+              - not_null
+              - unique                
+
+      - name: COUNTRYREGION
+        description: 'Tabela com informações sobre regiões e países'
+        columns:
+          - name: COUNTRYREGIONCODE
+            tests:
+              - not_null
+              - unique          
+
+      - name: STATEPROVINCE
+        description: 'Tabela com dados sobre estados e províncias'
+        columns:
+          - name: STATEPROVINCEID
+            tests:
+              - not_null
+              - unique  
+          - name: STATEPROVINCECODE
+            tests:
+              - not_null
+      - name: SALESORDERDETAIL
+        description: 'Tabela com dados detalhados dos pedidos de venda, incluindo produtos e quantidades'
+        columns:
+          - name: SALESORDERDETAILID
+            tests:
+              - not_null
+              - unique  
+          - name: SALESORDERID
+            tests:
+              - not_null
+           
+      - name: SALESORDERHEADER
+        description: 'Tabela com os principais dados dos pedidos de venda'
+        columns:
+          - name: SALESORDERID
+            tests:
+              - not_null
+              - unique  
+          - name: CUSTOMERID
+            tests:
+              - not_null
+            
+      - name: SALESORDERHEADERSALESREASON
+        description: 'Tabela que relaciona os pedidos(salesorderid) de venda e seus motivos/razões'
+        columns:
+          - name: SalesReasonID
+            tests:
+              - not_null              
+          - name: SalesOrderID
+            tests:
+              - not_null
+                  
+      - name: SALESPERSON
+        description: 'Tabela com dados sobre os vendedores da adventure works'
+        columns:
+          - name: BUSINESSENTITYID
+            tests:
+              - not_null
+              - unique  
+
+      - name: SALESREASON
+        description: 'Tabela com dados dos motivos/razões das realizações de vendas'
+        columns:
+          - name: SALESREASONID
+            tests:
+              - not_null
+              - unique  
+
+      - name: VENDOR
+        description: 'Tabela com dados dos fornecedores da adventure_works'
+        columns:
+          - name: BUSINESSENTITYID
+            tests:
+              - not_null
+              - unique  
