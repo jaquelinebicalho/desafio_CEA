@@ -19,7 +19,7 @@ with
             ,cast(PRODUCTNUMBER as varchar) as produto_numero_serie
             ,cast(MAKEFLAG as boolean) as produto_make_flag
             ,cast(FINISHEDGOODSFLAG as boolean) as produto_make_flag_finalizado
-            ,cast(COLOR as strig) as produto_cor
+            ,cast(COLOR as string) as produto_cor
             ,cast(SAFETYSTOCKLEVEL as int) as produto_nivel_estoque_seguranca
             ,cast(REORDERPOINT as int) as produto_ordem_recompra       
             ,cast(SIZEUNITMEASURECODE as string) as produto_cod_medida_tamanho

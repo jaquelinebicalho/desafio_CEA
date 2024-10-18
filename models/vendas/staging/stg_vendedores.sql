@@ -1,7 +1,7 @@
 with 
     vendedores as (
         select *
-        from  {{source('erp_adventure_works','SALESPERSON')}}
+        from  {{ source('erp_adventure_works','SALESPERSON') }}
     )
 
     ,renomeado as (
@@ -14,8 +14,8 @@ with
             ,cast (SALESYTD as float) as vendedor_vendas_acumuladas
             ,cast (SALESLASTYEAR as float) as vendedor_vendas_ano_anterior
             --,cast (ROWGUID as varchar) as vendedor_row_GUID
-            ,cast (MODIFIEDDATE as date) as vendedor_data_modificacao
-        
+            --,cast (MODIFIEDDATE as date) as vendedor_data_modificacao
+        from vendedores
     )
 
 select * 

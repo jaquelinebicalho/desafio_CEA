@@ -2,12 +2,12 @@ version: 2
 
 sources:
   - name: erp_adventure_works
-    description: Fonte do sistema ERP da empresa Adventure Works, com os dados de operação, vendas, transações, empregados, clientes e afins
+    description: Fonte do sistema ERP da empresa Adventure Works,incluindo os dados de fabricação, vendas, compras, gerenciamento de produtos, gestão de contatos e recursos humanos.
     database: FEA24_9
     schema: RAW_ADVENTURE_WORKS
     tables:
       - name: PRODUCT
-        description: 'Tabela com dados gerais sobre os produtos da Adventure Works'
+        description: 'Tabela com dados gerais sobre os produtos fabricados e vendidos pela adventure works'
         columns:
           - name: PRODUCTID
             tests:
@@ -41,15 +41,22 @@ sources:
             tests:
               - not_null
               - unique  
+      - name: PERSONCREDITCARD
+        description: 'Tabela de referência cruzada, mapeando pessoas com informações de cartão de crédito na tabela CreditCard'
+        columns:
+          - name: BUSINESSENTITYID
+            tests:
+              - not_null
+              - unique          
       - name: PERSON
-        description: 'Tabela com dados das pessoas físicas registradas'
+        description: 'Tabela com informaçãoes das pessoas envolvidas com a adventure works (clientes, funcionários e fornecedores)'
         columns:
           - name: BUSINESSENTITYID
             tests:
               - not_null
               - unique  
       - name: ADDRESS
-        description: 'Tabela com os endereços dos clientes e fornecedores'
+        description: 'Tabela com informações de endereço de clientes, funcionários e fornecedores'
         columns:
           - name: ADDRESSID
             tests:
@@ -73,7 +80,7 @@ sources:
             tests:
               - not_null
       - name: SALESORDERDETAIL
-        description: 'Tabela com dados detalhados dos pedidos de venda, incluindo produtos e quantidades'
+        description: 'Tabela com dados detalhados dos produtos associados a um pedido de venda específico'
         columns:
           - name: SALESORDERDETAILID
             tests:
@@ -83,7 +90,7 @@ sources:
             tests:
               - not_null
       - name: SALESORDERHEADER
-        description: 'Tabela com os principais dados dos pedidos de venda'
+        description: 'Tabela com informações gerais sobre pedidos de vendas'
         columns:
           - name: SALESORDERID
             tests:
@@ -93,7 +100,7 @@ sources:
             tests:
               - not_null
       - name: SALESORDERHEADERSALESREASON
-        description: 'Tabela que relaciona os pedidos(salesorderid) de venda e seus motivos/razões'
+        description: 'Tabela que relaciona os pedidos(salesorderid) de venda e seus motivos/razões '
         columns:
           - name: SalesReasonID
             tests:
@@ -109,16 +116,25 @@ sources:
               - not_null
               - unique 
       - name: SALESREASON
-        description: 'Tabela com dados dos motivos/razões das realizações de vendas'
+        description: 'Tabela com dados dos motivos/razões de compras pelos clientes'
         columns:
           - name: SALESREASONID
             tests:
               - not_null
               - unique  
-      - name: VENDOR
-        description: 'Tabela com dados dos fornecedores da adventure works'
+      - name: STORE
+        description: 'Tabela com informações sobre cadastros das lojas/ clientes (revendedores) de produtos Adventure Works'
         columns:
           - name: BUSINESSENTITYID
             tests:
               - not_null
               - unique  
+
+      - name: SHIPMETHOD
+        description: 'Tabela com informações dos métodos de envio disponíveis'
+        columns:
+          - name: SHIPMETHODID
+            tests:
+              - not_null
+              - unique  
+          
