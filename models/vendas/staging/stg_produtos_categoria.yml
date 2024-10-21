@@ -1,0 +1,17 @@
+
+version: 2
+
+models:
+  - name: stg_produtos_categoria
+    description: Tabela com dados gerais sobre as categorias dos produtos fabricados e vendidos pela adventure works.
+    columns:
+      - name: pk_id_produto_categoria
+        description: Chave primária da tabela (PRODUCTCATEGORYID).
+
+      - name: categoria_nome
+        description: Nome da categoria (NAME).
+
+      - name: categoria_data_modificacao
+        description: Data da última modificação da categoria do produto (MODIFIEDDATE).
+
+  

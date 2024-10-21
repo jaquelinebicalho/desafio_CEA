@@ -1,0 +1,75 @@
+version: 2
+
+models:
+  - name: stg_vendas_cabecalho
+    description: Tabela de cabeçalho com informações gerais sobre pedidos de vendas, extraído do erp da adventure works.
+    columns:
+      - name: pk_id_ordem_de_venda
+        description: Chave primária da tabela (SALESORDERID)
+
+      - name: fk_id_cliente
+        description: Chave estrangeira associando o cliente ao pedido de venda (CUSTOMERID).
+
+      - name: fk_id_vendedor 
+        description: Chave estrangeira associando o vendedor ao pedido de venda (SALESPERSONID).
+
+      - name: fk_id_territorio
+        description: Chave estrangeira associando o território (endereço) ao pedido de venda (TERRITORYID).
+
+      - name: fk_id_endereco_fatura 
+        description: Chave estrangeira associando o endereço de faturamento ao pedido de venda (BILLTOADDRESSID).
+
+      - name:  fk_id_endereco_envio
+        description: Chave estrangeira associando o endereço de entrega ao pedido de venda (SHIPTOADDRESSID).
+
+      - name: fk_id_metodo_entrega
+        description: Chave estrangeira associando o método de entrega ao pedido de venda(SHIPMETHODID).
+
+      - name: fk_id_cartao_credito
+        description: Chave estrangeira associando o cartão de crédito do cliente ao pedido de venda  (CREDITCARDID).
+
+      - name: fk_id_taxa_moeda
+        description: Chave estrangeira associando a cotação de moeda ao pedido de venda(CURRENCYRATEID).
+
+      - name: cabecalho_venda_data
+        description: Data de emissão do pedido venda (ORDERDATE).
+
+      - name: cabecalho_venda_data_prazo_entrega
+        description: Prazo de entrega (DUEDATE).
+
+      - name: cabecalho_venda_data_envio
+        description: Data do envio do pedido de venda (SHIPDATE).
+
+      - name: cabecalho_venda_data_modificacao
+        description: Data da última atualização da ordem de venda (MODIFIEDDATE).
+
+      - name: cabecalho_venda_valor_subtotal
+        description: Valor bruto do pedido de venda (SUBTOTAL).
+
+      - name: cabecalho_venda_valor_taxa
+        description: Valor dos impostos do pedido de venda (TAXAMT).
+
+      - name: cabecalho_venda_valor_frete 
+        description: Valor do frete do pedido de venda (FREIGHT).
+
+      - name: cabecalho_venda_valor_total 
+        description: Valor total do pedido de de venda (TOTALDUE).
+
+      - name: abecalho_venda_numero_revisao
+        description: Número de revisão do pedido de venda (REVISIONNUMBER).
+
+      - name: descricao_status
+        description: Status do pedido devenda (STATUS).
+
+      - name: cabecalho_venda_online
+        description: Tipo de venda, loja ou venda online.
+
+      - name: cabecalho_venda_num_pedido_compra
+        description: Numero do pedido de compra do fornecedor (PURCHASEORDERNUMBER).
+
+      - name: cabecalho_venda_numero_conta
+        description: Número da conta (ACCOUNTNUMBER).
+
+      - name: cabecalho_venda_cod_aprov_cartao
+        description: Código de aprovação do cartão de crédito (CREDITCARDAPPROVALCODE).
+     

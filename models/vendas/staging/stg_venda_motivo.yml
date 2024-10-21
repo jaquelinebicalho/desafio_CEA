@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_vendas_motivos
+    description: Tabela dos dados brutos com informações que relacionam os pedidos(salesorderid) de venda e seus motivos/razões cadastrados no erp da adventure works.
+    columns:
+      - name: pk_id_venda_motivo
+        description: Chave primária da tabela (SALESREASONID).
+      
+      - name:  venda_motivo_nome
+        description: Nome do motivo da venda (NAME).
+
+      - name:  venda_motivo_tipo
+        description: Categoria à qual pertence o motivo da venda (REASONTYPE).
+
+      - name:  venda_motivo_data_modificacao
+        description: Data da última modificação dos motvios de venda (MODIFIEDDATE).
+      

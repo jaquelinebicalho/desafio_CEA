@@ -11,10 +11,10 @@ models:
         description: Nome da loja (PERSONTYPE).
 
       - name: pessoa_tipo_nome
-        description: Nome da loja (PERSONTYPE).
+        description: Tipo da pessoa, cliente, contato de loja, vendedor, funcionário, contato de fornecedor, contato geral  (PERSONTYPE).
 
       - name: pessoa_nome
-        description: Nome da loja (FIRSTNAME e LASTNAME).
+        description: Nome completo da pessoa, concatenação das colunas (FIRSTNAME e LASTNAME).
 
       - name: email_promocional
-        description: Nome da loja (EMAILPROMOTION).
+        description: flag que indica se a pessoa optou por receber email promocionais (EMAILPROMOTION).

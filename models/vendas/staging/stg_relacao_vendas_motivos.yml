@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_relacao_vendas_motivos
+    description: Tabela dos dados brutos com informações que relacionam os pedidos(salesorderid) de venda e seus motivos/razões cadastrados no erp da adventure works.
+    columns:
+      - name: pk_id_ordem_de_venda
+        description: Chave primária da tabela (SALESORDERID).
+      
+      - name:  fk_id_motivo_venda
+        description: chave estrangeira que relaciona o motivo da venda(SALESREASONID).
+      
