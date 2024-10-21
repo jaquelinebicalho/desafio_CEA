@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_pessoas
+    description: Tabela dos dados brutos com informações sobre pessoas envolvidas com a adventure works (clientes, funcionários e fornecedores).
+    columns:
+      - name: pk_id_pessoa_identidade_empresarial
+        description: Chave primária da tabela (BUSINESSENTITYID).
+
+      - name: pessoa_tipo
+        description: Nome da loja (PERSONTYPE).
+
+      - name: pessoa_tipo_nome
+        description: Nome da loja (PERSONTYPE).
+
+      - name: pessoa_nome
+        description: Nome da loja (FIRSTNAME e LASTNAME).
+
+      - name: email_promocional
+        description: Nome da loja (EMAILPROMOTION).

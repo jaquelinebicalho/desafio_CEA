@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_forma_envio
+    description: Tabela dos dados brutos com informações sobre as formas de envio (transportadoras) cadastrados no erp da adventure works.
+    columns:
+      - name: pk_id_metodo_envio
+        description: Chave primária da tabela (SHIPMETHODID).
+
+      - name: nome_transportadora
+        description: Nome da transportadora (NAME).
+
+      - name:  metodo_envio_taxa_minima
+        description: Taxa mínima de envio (SHIPBASE).
+      
+      - name: metodo_envio_taxa_cobrada_kg
+        description: Taxa de envio(valor cobrado) por quilo (SHIPRATE).
