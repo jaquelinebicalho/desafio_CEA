@@ -1,0 +1,20 @@
+
+version: 2
+
+models:
+  - name: stg_produtos_subcategoria
+    description: Tabela com dados gerais das subcategorias dos produtos fabricados e vendidos pela adventure works.
+    columns:
+      - name: pk_id_produto_subcategoria
+        description: Chave primária da tabela (PRODUCTSUBCATEGORYID).
+
+      - name: fk_id_produto_categoria
+        description: Chave estrangeira da tabela categoria, que associa à subcategoria do produto (PRODUCTCATEGORYID).
+
+      - name: categoria_nome
+        description: Nome da subcategoria (NAME).
+
+      - name: categoria_data_modificacao
+        description: Data da última modificação da subcategoria do produto (MODIFIEDDATE).
+
+  

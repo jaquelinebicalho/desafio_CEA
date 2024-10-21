@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_regiao_pais
+    description: Tabela dos dados brutos com informações sobre regiões e países, de endereço de clientes, funcionários e fornecedores cadastrados no erp da adventure works.
+    columns:
+      - name: pk_id_endereco
+        description: Chave primária da tabela (COUNTRYREGIONCODE).
+      
+      - name:  pais_nome
+        description: Nome do país (NAME).
+      

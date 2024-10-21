@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_estado
+    description: Tabela dos dados brutos com informações sobre os estados (endereço) cadastrados no erp da adventure works.
+    columns:
+      - name: pk_id_estado
+        description: Chave primária da tabela (STATEPROVINCEID).
+
+      - name: fk_id_territorio
+        description: Chave estrangeiraque relaciona o território ao endereço (TERRITORYID).
+
+      - name: estado_cod_provincia
+        description: Código padrão ISO de estado ou província (STATEPROVINCECODE).
+      
+      - name: pais_codigo_regiao
+        description: Código padrão ISO para países e regiões (COUNTRYREGIONCODE).
+
+      - name: provincia_estado_flag
+        description: Flag que indica se o estado/província é o único do país (ISONLYSTATEPROVINCEFLAG).
+
+      - name: estado_nome
+        description: Nome do estado, do cadastro de endereço (NAME).

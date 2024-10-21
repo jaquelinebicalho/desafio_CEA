@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_vendedores
+    description: Tabela dos dados brutos com informações sobre pessoas os vendedores da adventure works.
+    columns:
+      - name: pk_id_vendedor_entidade_comercial
+        description: Chave primária da tabela (BUSINESSENTITYID).
+
+      - name: fk_id_territorio
+        description: Nome da loja (TERRITORYID).
+
+      - name: vendedor_meta
+        description: Meta de vendas anuais projetadas (SALESQUOTA).
+
+      - name: vendedor_bonus
+        description: Bônus devido se a meta for atingida (BONUS).
+
+      - name: vendedor_comissao
+        description: Porcentagem de comissão recebida por venda (COMMISSIONPCT).
+
+      - name: vendedor_vendas_acumuladas
+        description: Total de vendas no ano até o momento (SALESYTD).
+
+      - name: vendedor_vendas_ano_anterior
+        description: Total de vendas do ano anterior (SALESLASTYEAR ).
+
+  

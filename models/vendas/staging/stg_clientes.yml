@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_clientes
+    description: Tabela dos dados brutos com informações sobre os clientes cadastrados no erp da adventure works.
+    columns:
+      - name: pk_id_cliente
+        description: Chave primária da tabela (CUSTOMERID).
+
+      - name: fk_id_pessoa
+        description: Chave estrangeira da tabela pessoas (PERSON), que relaciona o tipo de pessoa ao cliente (PERSONID).
+
+      - name: fk_id_loja
+        description: Chave estrangeira da tabela lojas (STORE), que relaciona a loja cadastrada ao cliente (STOREID).
+      
+      - name: fk_id_territorio
+        description: Chave estrangeira da tabela estado (STATEPROVINCE), que relaciona o território ao cliente (TERRITORYID).

@@ -1,0 +1,77 @@
+
+version: 2
+
+models:
+  - name: stg_produtos
+    description: Tabela com dados gerais sobre os produtos fabricados e vendidos pela adventure works, contendo detalhes sobre cada produto.
+    columns:
+      - name: pk_id_produto
+        description: Chave primária do produto (PRODUCTID).
+
+      - name: fk_id_produto_subcategoria
+        description: Chave estrangeira da tabela subcategoria que associa o produto à sua a subcategoria (PRODUCTSUBCATEGORYID).
+
+      - name: fk_id_produto_modelo
+        description: Chave estrangeira que associa o modelo do produto (PRODUCTMODELID).
+
+      - name: produto_data_inicio_vendas
+        description: Data de início da venda do produto (SELLSTARTDATE).
+
+      - name: produto_data_fim_vendas
+        description: Data final da venda do produto (SELLENDDATE).
+
+      - name: produto_custo_padrao
+        description: Preço de custo unitário do produto (STANDARDCOST).
+
+      - name: produto_preco_listado 
+        description: Preço de venda do produto (LISTPRICE).
+
+      - name: produto_data_modificacao
+        description: Data da última modificação do produto (MODIFIEDDATE).
+
+      - name: produto_nome
+        description: Nome do produto (NAME).
+
+      - name:  produto_numero_serie
+        description: Número de série do produto (PRODUCTNUMBER).
+
+      - name: produto_make_flag
+        description: Indica se o produto é fabricado internamente ou adquirido de fornecedor (MAKEFLAG).
+
+      - name: produto_make_flag_finalizado
+        description: Indica se o produto é um item vendável (FINISHEDGOODSFLAG).
+
+      - name: produto_cor
+        description: Cor do produto (COLOR).
+
+      - name:  produto_nivel_estoque_seguranca
+        description: Quantidade mínima de estoque. Nível de estoque de segurança do produto (SAFETYSTOCKLEVEL).
+
+      - name: produto_ordem_recompra
+        description: Nível de estoque que aciona um pedido de compra ou ordem de serviço (REORDERPOINT).
+
+      - name: produto_cod_medida_tamanho
+        description: Unidade de medida do tamanho do produto (SIZEUNITMEASURECODE).
+
+      - name: produto_cod_medida_peso
+        description: Unidade de medida do peso do produto (WEIGHTUNITMEASURECODE).
+
+      - name: produto_peso
+        description: Peso do produto (WEIGHT).
+
+      - name: produto_tamanho
+        description: Tamanho do produto (SIZE).
+
+      - name: produto_dias_producao
+        description: Número de dias necessários para fabricar o produto (DAYSTOMANUFACTURE).
+
+      - name: produto_linha
+        description: Nome da linha do produto (PRODUCTLINE).
+
+      - name: produto_classe
+        description: Classe do produto (CLASS).
+
+      - name: produto_estilo
+        description: Estilo do produto (STYLE).
+
+      

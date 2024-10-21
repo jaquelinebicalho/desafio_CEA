@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_cartao_credito
+    description: Tabela de preparação dos dados brutos dos cartão de crédito dos clientes.
+    columns:
+      - name: pk_id_cartao_credito
+        description: Chave primária da tabela (CREDITCARDID).
+
+      - name: cartao_tipo
+        description: Nome do tipo do cartão de crédito (CARDTYPE).
+
+      - name: cartao_numero
+        description: Número do cartão de crédito (CARDNUMBER).
+
+      - name: cartao_mes_expiracao
+        description: Mês de expiração do cartão de crédito (EXPMONTH).
+
+      - name: cartao_ano_expiracao
+        description: Ano de expiração do cartão de crédito (EXPYEAR).
+
+   

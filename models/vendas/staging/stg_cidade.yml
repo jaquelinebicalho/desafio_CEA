@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_cidade
+    description: Tabela dos dados brutos com informações de endereço de clientes, funcionários e fornecedores cadastrados no erp da adventure works.
+    columns:
+      - name: pk_id_endereco
+        description: Chave primária da tabela (ADDRESSID).
+      
+      - name: fk_id_estado
+        description: Chave estrangeira da tabela estado(STATEPROVINCE) que referencia o estado do endereço (STATEPROVINCEID).
+      
+      - name: endereco_descricao
+        description: Descrição completa do endereço, unindo as duas linhas de endereço (ADDRESSLINE1 e ADDRESSLINE2).
+      
+      - name: endereco_cidade
+        description: Nome da cidade do endereço (CITY).

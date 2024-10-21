@@ -14,7 +14,7 @@ with
                 when PERSONTYPE = 'IN' then 'Cliente Varejo'
                 when PERSONTYPE = 'SP' then 'Vendedor'
                 when PERSONTYPE = 'EM' then 'Funcionário (exceto vendedor)'
-                when PERSONTYPE = 'VC' then 'Conteto de Fornecedor'
+                when PERSONTYPE = 'VC' then 'Contato de Fornecedor'
                 when PERSONTYPE = 'GC' then 'Contato Geral'
                 else 'Verificar'
             end as pessoa_tipo_nome        

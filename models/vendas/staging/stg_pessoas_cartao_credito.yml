@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_pessoas_cartao_credito
+    description: Tabela de referência cruzada mapeando pessoas associadas à adventure works (clientes, funcionários e fornecedores) com informações de cartão de crédito.
+    columns:
+      - name: pk_id_pessoa_identidade_empresarial
+        description: Chave primária da tabela (BUSINESSENTITYID).
+
+      - name: fk_id_cartao_credito
+        description: chave estrangeira de referência cruzada que associa as pessoas com suas informações de cartão de crédito (CREDITCARDID).

@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_vendas_detalhe
+    description: Tabela de informações detalhadas sobre pedidos de vendas, extraído do erp da adventure works.
+    columns:
+      - name: pk_id_vendas_detalhe
+        description: Chave primária da tabela (SALESORDERDETAILID)
+
+      - name: fk_id_vendas_cabecalho
+        description: Chave estrangeira associando o pedido ao cabeçalho de venda (SALESORDERID).
+
+      - name: fk_id_produto 
+        description: Chave estrangeira associando o produto ao pedido de venda (PRODUCTID).
+
+      - name: fk_id_venda_oferta_especial
+        description: Chave estrangeira associando ofertas especiais ao pedido de venda (SPECIALOFFERID).
+
+      - name: vendas_detalhe_quantidade
+        description: Quantidade de produtos do pedido de venda (ORDERQTY).
+
+      - name:  vendas_detalhe_preco_unitario
+        description: Preço unitário do produto no pedido de venda (UNITPRICE).
+
+      - name: vendas_detalhe_perc_desconto
+        description: Percentual de desconto no pedido de venda(UNITPRICEDISCOUNT).
+
+      - name: vendas_detalhe_numero_rastreamento
+        description: Número de rastreamento da transportadora  (CARRIERTRACKINGNUMBER).
+
+      
