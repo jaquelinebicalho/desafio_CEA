@@ -9,8 +9,6 @@ with
             ,cast(UNITPRICE as float) as vendas_detalhe_preco_unitario
             ,cast(UNITPRICEDISCOUNT as float) as vendas_detalhe_perc_desconto
             ,cast(CARRIERTRACKINGNUMBER as varchar) as vendas_detalhe_numero_rastreamento   
-            --,ORDERQTY * UNITPRICE as vendas_detalhe_total_negociado
-            --,ORDERQTY * (UNITPRICE * (1-UNITPRICEDISCOUNT)) as vendas_detalhe_valor_liquido_negociado
         from  {{source('erp_adventure_works','SALESORDERDETAIL')}}
     )   
 
