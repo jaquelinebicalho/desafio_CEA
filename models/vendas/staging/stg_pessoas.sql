@@ -17,7 +17,7 @@ with
                 when PERSONTYPE = 'VC' then 'Contato de Fornecedor'
                 when PERSONTYPE = 'GC' then 'Contato Geral'
                 else 'Verificar'
-            end as pessoa_tipo_nome        
+            end as pessoa_tipo_desc        
             ,cast(FIRSTNAME ||' '||LASTNAME as varchar) as pessoa_nome
             ,cast(EMAILPROMOTION as int) as email_promocional
             --,cast(MODIFIEDDATE as date) as person_data_att
