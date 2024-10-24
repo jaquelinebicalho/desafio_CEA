@@ -15,10 +15,11 @@ with
 
     ,clientes_enriquecida as (
         select
-             clientes.pk_id_cliente
+            clientes.pk_id_cliente
             ,pessoas.pk_id_pessoa_identidade_empresarial
             ,pessoas.pessoa_tipo
             ,pessoas.pessoa_tipo_desc
+            ,pessoas.pessoa_nome
             ,pessoas.email_promocional
             ,
         from clientes

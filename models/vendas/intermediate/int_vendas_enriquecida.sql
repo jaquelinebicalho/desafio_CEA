@@ -14,8 +14,7 @@ with
         from {{ref("stg_produtos")}}
     )
 
-
-    ,regra_negocio as (
+    ,vendas_enriquecida as (
         select 
             vendas_cabecalho.pk_id_ordem_de_venda
             ,vendas_cabecalho.fk_id_cliente
@@ -56,10 +55,51 @@ with
             *
             , vendas_detalhe_quantidade * vendas_detalhe_preco_unitario as vendas_valor_bruto
             , vendas_detalhe_quantidade * (vendas_detalhe_preco_unitario * (1- vendas_detalhe_perc_desconto)) as vendas_valor_liquido
+            ,vendas_valor_bruto - (produto_custo_padrao * vendas_detalhe_quantidade) as vendas_margem_bruta 
             , vendas_valor_liquido - (produto_custo_padrao * vendas_detalhe_quantidade) as vendas_margem_liquida
-            , vendas_valor_bruto - (produto_custo_padrao * vendas_detalhe_quantidade) as vendas_margem_bruta    
-        from regra_negocio
+            , cabecalho_venda_valor_frete / (count(*) over(partition by pk_id_ordem_de_venda)) as frete_rateado  
+        from vendas_enriquecida
     )
 
-select * from regra_negocio
+ , final_select as (
+        select
+            pk_id_ordem_de_venda as "Nota Fiscal"
+            ,fk_id_cliente as "ID cliente"
+            ,fk_id_vendedor as "ID Vendedor"
+            ,fk_id_territorio as "ID Território"
+            ,fk_id_endereco_fatura as "ID Endereço Fatura"
+            ,fk_id_endereco_entrega as "ID Endereço Entrega"
+            ,fk_id_metodo_entrega as "ID Método Entrega"
+            ,fk_id_cartao_credito as "ID Cartão de Crédito"
+            ,fk_id_taxa_moeda as "ID Taxa de Câmbio"
+            ,fk_id_produto as "ID Produto"
+            ,fk_id_venda_oferta_especial as "ID Código Promocional"
+            ,cabecalho_venda_data as "Data Emissão Venda"
+            ,cabecalho_venda_data_prazo_entrega as "Data Prazo de Entrega"
+            ,cabecalho_venda_data_envio as "Data de Envio"
+            ,cabecalho_venda_valor_bruto as "Valor Subtotal NF"
+            ,cabecalho_venda_valor_taxa as "Valor Total Impostos"
+            ,cabecalho_venda_valor_frete as "Valor Total Frete"
+            ,cabecalho_venda_valor_total as "Valor Total NF" 
+            ,vendas_detalhe_quantidade as "Quantidade Produto"
+            ,vendas_detalhe_preco_unitario as "Preço Venda Unitário"
+            ,vendas_detalhe_perc_desconto as "Percentual Desconto"
+            ,produto_custo_padrao as "Valor Custo Produto" 
+            ,cast(vendas_valor_bruto as numeric(18,2)) as "Valor Total Bruto" --sem desconto
+            ,cast(vendas_valor_liquido as numeric(18,2)) as "Valor Total Líquido" -- com desconto
+            ,cast(vendas_margem_bruta as numeric(18,2)) as "Margem Bruta" --sem desconto
+            ,cast(vendas_margem_liquida as numeric(18,2)) as "Margem Líquida" -- com desconto
+            ,cast(frete_rateado as numeric(18,2)) as "Valor Frete Rateado"
+            ,cabecalho_venda_numero_revisao as "Num Revisão"
+            ,cabecalho_venda_status as "Cod Status"
+            ,descricao_status as "Status"
+            ,cabecalho_venda_online as "Tipo Venda"
+            ,cabecalho_venda_num_pedido_compra as "Num Pedido Compra"
+            ,cabecalho_venda_numero_conta as "Num Conta"
+            ,cabecalho_venda_cod_aprov_cartao as "Cód Aprovação Cartão"
+            from metricas
+ )
+
+select * 
+from final_select
 
