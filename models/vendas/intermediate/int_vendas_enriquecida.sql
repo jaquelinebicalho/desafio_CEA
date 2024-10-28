@@ -55,7 +55,7 @@ with
             *
             , vendas_detalhe_quantidade * vendas_detalhe_preco_unitario as vendas_valor_bruto
             , vendas_detalhe_quantidade * (vendas_detalhe_preco_unitario * (1- vendas_detalhe_perc_desconto)) as vendas_valor_liquido
-            ,vendas_valor_bruto - (produto_custo_padrao * vendas_detalhe_quantidade) as vendas_margem_bruta 
+            , vendas_valor_bruto - (produto_custo_padrao * vendas_detalhe_quantidade) as vendas_margem_bruta 
             , vendas_valor_liquido - (produto_custo_padrao * vendas_detalhe_quantidade) as vendas_margem_liquida
             , cabecalho_venda_valor_frete / (count(*) over(partition by pk_id_ordem_de_venda)) as frete_rateado  
         from vendas_enriquecida
