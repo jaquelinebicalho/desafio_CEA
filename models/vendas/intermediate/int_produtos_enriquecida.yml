@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: int_produtos_enriquecida
+    description: Tabela intermediária com informações do produtos fabricados e vendidos pela adventure works
+    columns:
+      - name: ID Produto
+        description: Chave primária do produto
+
+      - name: Produto
+        description: Nome do produto
+
+      - name: Categoria
+        description: Categoria do produto
+
+      - name: Subcategoria
+        description: Subcategoria do produto
+
+      - name: Início Vendas
+        description: Data de início das vendas do produto
+
+      - name: Fim das Vendas
+        description: Data de fim das vendas do produto
+
+      - name: Preço de Custo
+        description: Preço de custo do produto
+
+      - name: Preço de Venda
+        description: Preço de venda do produto
+
+       
