@@ -4,7 +4,7 @@ with
             cast(STATEPROVINCEID as int) as pk_id_estado
             ,cast(TERRITORYID as int) as fk_id_territorio
             ,cast(STATEPROVINCECODE as varchar) as estado_cod_provincia
-            ,cast(COUNTRYREGIONCODE as varchar) as pais_codigo_regiao
+            ,cast(COUNTRYREGIONCODE as varchar) as estado_codigo_regiao
             ,cast(ISONLYSTATEPROVINCEFLAG as varchar) as provincia_estado_flag
             ,cast(NAME as varchar) as estado_nome
             --,cast(MODIFIEDDATE as varchar) as estado_data_modificacao

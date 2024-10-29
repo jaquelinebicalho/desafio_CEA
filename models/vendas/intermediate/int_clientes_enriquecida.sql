@@ -21,7 +21,6 @@ with
             ,pessoas.pessoa_tipo_desc
             ,pessoas.pessoa_nome
             ,pessoas.email_promocional
-            ,
         from clientes
         left join pessoas on clientes.fk_id_pessoa = pessoas.pk_id_pessoa_identidade_empresarial
         left join lojas on lojas.pk_id_loja = clientes.fk_id_loja

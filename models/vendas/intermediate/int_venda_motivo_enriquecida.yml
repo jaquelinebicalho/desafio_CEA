@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_venda_motivo_enriquecida
+    description: Tabela intermediária com informações dos motivos de vendas, relaciona os pedidos(salesorderid) de venda e seus motivos/razões
+    columns:
+      - name: Nota Fiscal
+        description: Chave primária da venda
+
+      - name: Motivo Venda
+        description: Descrição do motivo de venda
+
+      - name: Motivo Tipo
+        description: Tipo do motivo de venda
+
+
+            
