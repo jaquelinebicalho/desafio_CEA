@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: dim_vendedores
+    description: Tabela dimensão de vendedores, contendo informações de nome, códigos,metas de vendas, comissões, bonus e vendas acumuladas.
+    columns:
+      - name: ID Identidade Pessoal
+        description: Chave primária do vendedor
+      
+      - name: ID localização
+        description: ID do local associado ao vendedor 
+
+      - name: Nome
+        description: Nome do Vendedor
+
+      - name: Cód
+        description: Código do tipo de pessoa associado
+
+      - name: Tipo Pessoa
+        description: Descrição do tipo de pessoa associado ao código
+
+      - name: Meta Vendedor
+        description: Vendas anuais projetadas para o vendedor
+
+      - name: Bônus Vendedor
+        description: Bônus devido ao vendedor se a cota for atingida
+
+      - name: Comissão Vendedor
+        description: Porcentagem de comissão recebida por venda
+
+      - name: Vendas Acumuladas
+        description: Total de vendas no ano até o momento
+
+      - name: Vendas Ano Anterior
+        description: Total de vendas do ano anterior
+           
+            
+            
+   
+         

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_cartao_credito
+    description: Tabela dimensão com informações dos dados de cartão de crédito dos clientes
+    columns:
+      - name: ID Cartão de Crédito
+        description: Chave primária do cartão de crédito
+
+      - name: Tipo Cartão
+        description: Descrição do tipo do cartão de crédito
+
+      - name: Núm Cartão
+        description: Número do cartão de crédito
+      
+      - name: Mês Expiração
+        description: Mês de Expiração do cartão de crédito
+
+      - name: Ano Expiração
+        description: Ano de Expiração do cartão de crédito
+
+      - name: ID Identidade Pessoal
+        description: ID do cadastro do cliente
+
+     
+
+       
