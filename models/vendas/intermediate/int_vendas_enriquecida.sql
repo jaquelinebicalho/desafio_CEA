@@ -74,7 +74,7 @@ with
             ,fk_id_taxa_moeda as "ID Taxa de Câmbio"
             ,fk_id_produto as "ID Produto"
             ,fk_id_venda_oferta_especial as "ID Código Promocional"
-            ,cabecalho_venda_data as "Data Emissão Venda"
+            ,cabecalho_venda_data  as "Data Emissão Venda"
             ,cabecalho_venda_data_prazo_entrega as "Data Prazo de Entrega"
             ,cabecalho_venda_data_envio as "Data de Envio"
             ,cabecalho_venda_valor_bruto as "Valor Subtotal NF"
@@ -85,11 +85,11 @@ with
             ,vendas_detalhe_preco_unitario as "Preço Venda Unitário"
             ,vendas_detalhe_perc_desconto as "Percentual Desconto"
             ,produto_custo_padrao as "Valor Custo Produto" 
-            ,cast(vendas_valor_bruto as numeric(18,2)) as "Valor Total Bruto" --sem desconto
+            ,cast(vendas_valor_bruto as float) as "Valor Total Bruto" --sem desconto
             ,cast(vendas_valor_liquido as numeric(18,2)) as "Valor Total Líquido" -- com desconto
             ,cast(vendas_margem_bruta as numeric(18,2)) as "Margem Bruta" --sem desconto
             ,cast(vendas_margem_liquida as numeric(18,2)) as "Margem Líquida" -- com desconto
-            ,cast(frete_rateado as numeric(18,2)) as "Valor Frete Rateado"
+            ,cast(frete_rateado as decimal) as "Valor Frete Rateado"
             ,cabecalho_venda_numero_revisao as "Num Revisão"
             ,cabecalho_venda_status as "Cod Status"
             ,descricao_status as "Status"

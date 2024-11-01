@@ -10,14 +10,14 @@ with
             ,cast (SHIPMETHODID as int) as fk_id_metodo_entrega
             ,cast (CREDITCARDID as int) as fk_id_cartao_credito
             ,cast (CURRENCYRATEID as int) as fk_id_taxa_moeda 
-            ,cast (ORDERDATE as date) as cabecalho_venda_data
-            ,cast (DUEDATE as date) as cabecalho_venda_data_prazo_entrega
-            ,cast (SHIPDATE as date) as cabecalho_venda_data_envio
-            ,cast (MODIFIEDDATE as date) as cabecalho_venda_data_modificacao
-            ,cast (SUBTOTAL as number(18,2)) as cabecalho_venda_valor_bruto
-            ,cast (TAXAMT as number(18,2)) as cabecalho_venda_valor_taxa
-            ,cast (FREIGHT as number(18,2)) as cabecalho_venda_valor_frete 
-            ,cast (TOTALDUE as number(18,2)) as cabecalho_venda_valor_total 
+            ,cast (ORDERDATE as timestamp) as cabecalho_venda_data
+            ,cast (DUEDATE as timestamp) as cabecalho_venda_data_prazo_entrega
+            ,cast (SHIPDATE as timestamp) as cabecalho_venda_data_envio
+            ,cast (MODIFIEDDATE as timestamp) as cabecalho_venda_data_modificacao
+            ,cast (SUBTOTAL as numeric(18,2)) as cabecalho_venda_valor_bruto
+            ,cast (TAXAMT as numeric(18,2)) as cabecalho_venda_valor_taxa
+            ,cast (FREIGHT as numeric(18,2)) as cabecalho_venda_valor_frete 
+            ,cast (TOTALDUE as numeric(18,2)) as cabecalho_venda_valor_total 
             ,cast (REVISIONNUMBER as varchar) as cabecalho_venda_numero_revisao 
             ,cast (STATUS as varchar) as cabecalho_venda_status 
             ,case
