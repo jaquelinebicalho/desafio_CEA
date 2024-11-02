@@ -87,7 +87,7 @@ with
             ,vendas_detalhe_preco_unitario as "Preço Venda Unitário"
             ,vendas_detalhe_perc_desconto as "Percentual Desconto"
             ,produto_custo_padrao as "Valor Custo Produto" 
-            ,cast(vendas_valor_bruto as float) as "Valor Total Bruto" --sem desconto
+            ,cast(vendas_valor_bruto as numeric(18,4)) as "Valor Total Bruto" --sem desconto
             ,cast(vendas_valor_liquido as numeric(18,2)) as "Valor Total Líquido" -- com desconto
             ,cast(vendas_margem_bruta as numeric(18,2)) as "Margem Bruta" --sem desconto
             ,cast(vendas_margem_liquida as numeric(18,2)) as "Margem Líquida" -- com desconto
