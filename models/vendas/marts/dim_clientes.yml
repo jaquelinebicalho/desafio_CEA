@@ -6,6 +6,9 @@ models:
     columns:
         - name: pk_id_cliente
           description: Chave primária do cliente
+          tests:
+          - unique
+          - not_null
 
         - name: pk_id_pessoa_identidade_empresarial
           description: Chave primária da identidade empresarial associada ao cliente

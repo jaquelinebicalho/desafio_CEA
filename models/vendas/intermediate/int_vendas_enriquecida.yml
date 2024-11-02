@@ -4,37 +4,41 @@ models:
   - name: int_vendas_enriquecida
     description: Tabela intermediária de vendas, unindo detalhes e cabeçalho das vendas com informações de produtos e métricas
     columns:
-      - name: Nota Fiscal
+      - name: Nota_Fiscal
         description: Chave primária da ordem de venda/Número da nota fiscal
+        
+      - name: ID_Ordem_Pedido
+        description: Chave surrogete que une a chave primária do pedido e a chave primária do produto
+        
 
-      - name: ID cliente
+      - name: ID_cliente
         description: Chave estrangeira associada ao ID do cliente
 
-      - name: ID Vendedor
+      - name: ID_Vendedor
         description: Chave estrangeira associada ao ID do Vendedor
 
-      - name: ID Território
+      - name: ID_Territorio
         description: Chave estrangeira associada ao território da venda
 
-      - name: ID Endereço Fatura
+      - name: ID_Endereco_Fatura
         description: Chave estrangeira associada ao endereço de faturamento do pedido
 
-      - name: ID Endereço Entrega
+      - name: ID_Endereco_Entrega
         description: Chave estrangeira associada ao endereço de entrega do pedido
 
-      - name: ID Método Entrega
+      - name: ID_Metodo_Entrega
         description: Chave estrangeira associada ao tipo de entrega/ transportadora do pedido
 
-      - name: ID Cartão de Crédito
+      - name: ID_Cartao_de_Credito
         description: Chave estrangeira associada ao cartão de crédito
 
-      - name: ID Taxa de Câmbio
+      - name: ID_Taxa_de_Cambio
         description: Chave estrangeira associada à táxia de câmbio do pedido
 
-      - name: ID Produto
+      - name: ID_Produto
         description: Chave estrangeira associada ao ID do produto
 
-      - name: ID Código Promocional
+      - name: ID_Codigo_Promocional
         description: Chave estrangeira associada à condição especial de venda
 
       - name: Data Emissão Venda

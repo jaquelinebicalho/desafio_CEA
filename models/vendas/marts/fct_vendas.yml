@@ -4,106 +4,112 @@ models:
   - name: fct_vendas
     description: Tabela de fato vendas, contém informações detalhadas sobre faturamento, clientes, vendedores, produtos, região,etc.
     columns:
-      - name: Nota Fiscal
+      - name: Nota_Fiscal
         description: Chave primária da ordem de venda/Número da nota fiscal
 
-      - name: ID cliente
+      - name: ID_Ordem_Pedido
+        description: Chave surrogete que une a chave primária do pedido e a chave primária do produto
+        tests:
+          - unique
+          - not_null
+
+      - name: ID_cliente
         description: Chave estrangeira associada ao ID do cliente
 
-      - name: ID Vendedor
+      - name: ID_Vendedor
         description: Chave estrangeira associada ao ID do Vendedor
 
-      - name: ID Território
+      - name: ID_Território
         description: Chave estrangeira associada ao território da venda
-
-      - name: ID Endereço Fatura
+    
+      - name: ID_Endereço_Fatura
         description: Chave estrangeira associada ao endereço de faturamento do pedido
 
-      - name: ID Endereço Entrega
+      - name: ID_Endereço_Entrega
         description: Chave estrangeira associada ao endereço de entrega do pedido
 
-      - name: ID Método Entrega
+      - name: ID_Método_Entrega
         description: Chave estrangeira associada ao tipo de entrega/ transportadora do pedido
 
-      - name: ID Cartão de Crédito
+      - name: ID_Cartão_de_Crédito
         description: Chave estrangeira associada ao cartão de crédito
 
-      - name: ID Taxa de Câmbio
+      - name: ID_Taxa_de_Câmbio
         description: Chave estrangeira associada à táxia de câmbio do pedido
 
-      - name: ID Produto
+      - name: ID_Produto
         description: Chave estrangeira associada ao ID do produto
 
-      - name: ID Código Promocional
+      - name: ID_Código_Promocional
         description: Chave estrangeira associada à condição especial de venda
 
-      - name: Data Emissão Venda
+      - name: "Data Emissão Venda"
         description: Data de emissão do pedido de venda
 
-      - name: Data Prazo de Entrega
+      - name: "Data Prazo de Entrega"
         description: Data final do prazo de entrega dos produtos vendidos
 
-      - name: Data de Envio
+      - name: "Data de Envio"
         description: Data de envio do pedido 
 
-      - name: Valor Subtotal NF
+      - name: "Valor Subtotal NF"
         description: Valor subtotal da nota fiscal (não incluí impostos e frete)
 
-      - name: Valor Total Impostos
+      - name: "Valor Total Impostos"
         description: Valor total dos impostos da NF
 
-      - name: Valor Total Frete
+      - name: "Valor Total Frete"
         description: Valor total do frete da NF
 
-      - name: Valor Total NF (incluí impostos e frete)
-        description: Valor total dos impostos da NF
+      - name: "Valor Total NF" 
+        description: Valor total dos impostos da NF (incluí impostos e frete)
 
-      - name: Quantidade Produto  
+      - name: "Quantidade Produto" 
         description: Quantidade de cada produto na nota fiscal
 
-      - name: Preço Venda Unitário
+      - name: "Preço Venda Unitário"
         description: Preço de venda unitário de cada produto na nota fiscal
 
-      - name: Percentual Desconto
+      - name: "Percentual Desconto"
         description: Percentual de desconto aplicado
 
-      - name: Valor Custo Produto
+      - name: "Valor Custo Produto"
         description: Valor de custo de cada produto na nota fiscal
 
-      - name: Valor Total Bruto
+      - name: "Valor Total Bruto"
         description: Valor Final da NF (sem descontos aplicados)
 
-      - name: Valor Total Líquido 
+      - name: "Valor Total Líquido" 
         description: Valor Final da NF (com descontos aplicados)
 
-      - name: Margem Bruta
+      - name: "Margem Bruta"
         description: Margem bruta de venda (% lucro a cada venda realizada - sem descontos aplicados)
 
-      - name: Margem Líquida
+      - name: "Margem Líquida"
         description: Margem líquida de venda(% lucro a cada venda realizada - com descontos aplicados)
 
-      - name: Valor Frete Rateado
+      - name: "Valor Frete Rateado"
         description: Valor do frete rateado pela quantidade de produtos da NF
 
-      - name: Num Revisão
+      - name: "Num Revisão"
         description: Número da revisão do pedido de venda
 
-      - name: Cod Status
+      - name: "Cod Status"
         description: Códido do status da venda (1,2,3,4,5,6)
 
       - name: Status
         description: Descrição do status da venda (Processando, Aprovada, Em espera, Recusada, Enviada, Cancelada)
 
-      - name: Tipo Venda
+      - name: "Tipo Venda"
         description: Descreve se a venda foi realizada na loja, ou online
 
-      - name: Num Pedido Compra
+      - name: "Num Pedido Compra"
         description: Número do pedido de compra no fornecedor
 
-      - name: Num Conta
+      - name: "Num Conta"
         description: Número da conta da venda
 
-      - name: Cód Aprovação Cartão
+      - name: "Cód Aprovação Cartão"
         description: Código de aprovação do cartão de crédito
 
       

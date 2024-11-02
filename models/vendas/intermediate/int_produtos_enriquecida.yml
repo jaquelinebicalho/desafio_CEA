@@ -4,7 +4,7 @@ models:
   - name: int_produtos_enriquecida
     description: Tabela intermediária com informações do produtos fabricados e vendidos pela adventure works
     columns:
-      - name: ID Produto
+      - name: ID_Produto
         description: Chave primária do produto
 
       - name: Produto

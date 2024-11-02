@@ -11,8 +11,8 @@ with
 
     ,renomeado as (
         select 
-            vendedores.pk_id_vendedor_entidade_comercial as "ID Identidade Pessoal"
-            ,vendedores.fk_id_territorio as "ID localização"
+            vendedores.pk_id_vendedor_entidade_comercial as ID_Identidade_Pessoal
+            ,vendedores.fk_id_territorio as ID_localizacao
             ,pessoas.pessoa_nome as "Nome"
             ,pessoas.pessoa_tipo as "Cód"
             ,pessoas.pessoa_tipo_desc as "Tipo Pessoa"

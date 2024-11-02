@@ -17,6 +17,7 @@ with
     ,vendas_enriquecida as (
         select 
             vendas_cabecalho.pk_id_ordem_de_venda
+            ,vendas_detalhe.pk_id_vendas_detalhe
             ,vendas_cabecalho.fk_id_cliente
             ,vendas_cabecalho.fk_id_vendedor
             ,vendas_cabecalho.fk_id_territorio
@@ -63,17 +64,18 @@ with
 
  , final_select as (
         select
-            pk_id_ordem_de_venda as "Nota Fiscal"
-            ,fk_id_cliente as "ID cliente"
-            ,fk_id_vendedor as "ID Vendedor"
-            ,fk_id_territorio as "ID Território"
-            ,fk_id_endereco_fatura as "ID Endereço Fatura"
-            ,fk_id_endereco_entrega as "ID Endereço Entrega"
-            ,fk_id_metodo_entrega as "ID Método Entrega"
-            ,fk_id_cartao_credito as "ID Cartão de Crédito"
-            ,fk_id_taxa_moeda as "ID Taxa de Câmbio"
-            ,fk_id_produto as "ID Produto"
-            ,fk_id_venda_oferta_especial as "ID Código Promocional"
+            pk_id_ordem_de_venda as Nota_Fiscal
+            ,pk_id_vendas_detalhe as ID_Ordem_Pedido
+            ,fk_id_cliente as ID_cliente
+            ,fk_id_vendedor as ID_Vendedor
+            ,fk_id_territorio as ID_Territorio
+            ,fk_id_endereco_fatura as ID_Endereco_Fatura
+            ,fk_id_endereco_entrega as ID_Endereco_Entrega
+            ,fk_id_metodo_entrega as ID_Metodo_Entrega
+            ,fk_id_cartao_credito as ID_Cartao_de_Credito
+            ,fk_id_taxa_moeda as ID_Taxa_de_Cambio
+            ,fk_id_produto as ID_Produto
+            ,fk_id_venda_oferta_especial as ID_Codigo_Promocional
             ,cabecalho_venda_data  as "Data Emissão Venda"
             ,cabecalho_venda_data_prazo_entrega as "Data Prazo de Entrega"
             ,cabecalho_venda_data_envio as "Data de Envio"

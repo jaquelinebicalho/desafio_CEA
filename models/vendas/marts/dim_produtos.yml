@@ -4,28 +4,31 @@ models:
   - name: dim_produtos
     description: Tabela dimensão com informações do produtos fabricados e vendidos pela adventure works, incluindo sua categoria, e subcategoria.
     columns:
-      - name: ID Produto
+      - name: ID_Produto
         description: Chave primária do produto
+        tests:
+          - unique
+          - not_null
 
-      - name: Produto
-        description: Nome do produto
+      - name: "Produto"
+        description: "Nome do produto"
 
-      - name: Categoria
-        description: Categoria do produto
+      - name: "Categoria"
+        description: "Categoria do produto"
 
-      - name: Subcategoria
-        description: Subcategoria do produto
+      - name: "Subcategoria"
+        description: "Subcategoria do produto"
 
-      - name: Início Vendas
-        description: Data de início das vendas do produto
+      - name: "Início Vendas"
+        description: "Data de início das vendas do produto"
 
-      - name: Fim das Vendas
-        description: Data de fim das vendas do produto
+      - name: "Fim das Vendas"
+        description: "Data de fim das vendas do produto"
 
-      - name: Preço de Custo
-        description: Preço de custo do produto
+      - name: "Preço de Custo"
+        description: "Preço de custo do produto"
 
-      - name: Preço de Venda
-        description: Preço de venda do produto
+      - name: "Preço de Venda"
+        description: "Preço de venda do produto"
 
        
