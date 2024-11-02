@@ -14,12 +14,12 @@ with
 
     ,localizacao_enriquecida as (
         select
-            cidade.pk_id_endereco as "ID Endereço"
+            cidade.pk_id_endereco as ID_Endereco
             ,cidade.endereco_cidade as "Cidade"
-            ,cidade.endereco_descricao as "Endereço Completo"
+            ,cidade.endereco_descricao as "Endereco Completo"
             ,estado.estado_nome as "Estado"
-            ,pais.pais_nome as "País"
-            ,pais.pais_codigo_regiao as "Cód País"
+            ,pais.pais_nome as "Pais"
+            ,pais.pais_codigo_regiao as "Cod Pais"
             from cidade 
             left join estado on pk_id_estado = fk_id_estado 
             left join pais on estado_codigo_regiao = pais_codigo_regiao

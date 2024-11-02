@@ -16,7 +16,7 @@ with
     
     ,renomeado as (
         select 
-            produtos.pk_id_produto  as "ID Produto"
+            produtos.pk_id_produto  as ID_Produto
             ,produtos.produto_nome as "Produto"
             ,categoria.categoria_nome as "Categoria"
             ,subcategoria.subcategoria_nome  as "Subcategoria"

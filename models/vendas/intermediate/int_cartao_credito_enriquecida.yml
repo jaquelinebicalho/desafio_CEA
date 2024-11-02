@@ -4,7 +4,7 @@ models:
   - name: int_cartao_credito_enriquecida
     description: Tabela intermediária com informações dos dados de cartão de crédito dos clientes
     columns:
-      - name: ID Cartão de Crédito
+      - name: ID_Cartao_de_Credito
         description: Chave primária do cartão de crédito
 
       - name: Tipo Cartão
@@ -19,7 +19,7 @@ models:
       - name: Ano Expiração
         description: Ano de Expiração do cartão de crédito
 
-      - name: ID Identidade Pessoal
+      - name: ID_Identidade_Pessoal
         description: ID do cadastro do cliente
 
      

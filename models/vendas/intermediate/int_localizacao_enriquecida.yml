@@ -4,23 +4,23 @@ models:
   - name: int_localizacao_enriquecida
     description: Tabela intermediária com informações das regiões (cidades,estados e país)
     columns:
-      - name: ID Endereço
+      - name: ID_Endereco
         description: Chave primária do endereço
         
-      - name: Cidade
-        description: Nome da cidade 
+      - name: "Cidade"
+        description: 'Nome da cidade '
 
-      - name: Endereço Completo
-        description: Nome da rua/avenida,bairro e número do endereço
+      - name: "Endereco Completo"
+        description: 'Nome da rua/avenida,bairro e número do endereço'
 
-      - name: Estado
-        description: Nome do Estado
+      - name: "Estado"
+        description: 'Nome do Estado'
 
-      - name: País
-        description: Nome do País
+      - name: "Pais"
+        description: 'Nome do Pais'
 
-      - name: Cód País
-        description: Código do País
+      - name: "Cod Pais"
+        description: 'Código do Pais'
 
             
             

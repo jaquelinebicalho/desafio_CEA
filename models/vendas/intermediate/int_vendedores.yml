@@ -4,10 +4,10 @@ models:
   - name: int_vendedores
     description: Tabela intermediária de vendedores, contendo informações de nome, códigos,metas de vendas, comissões, bonus e vendas acumuladas.
     columns:
-      - name: ID Identidade Pessoal
+      - name: ID_Identidade_Pessoal
         description: Chave primária do vendedor
       
-      - name: ID localização
+      - name: ID_localizacao
         description: ID do local associado ao vendedor 
 
       - name: Nome

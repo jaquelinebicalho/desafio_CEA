@@ -4,13 +4,13 @@ models:
   - name: dim_venda_motivo
     description: Tabela dimensão com informações dos motivos de vendas, relaciona os pedidos(salesorderid) de venda e seus motivos/razões
     columns:
-      - name: Nota Fiscal
+      - name: Nota_Fiscal
         description: Chave primária da venda
 
-      - name: Motivo Venda
-        description: Descrição do motivo de venda
+      - name: Motivo_Venda
+        description: Chave surrogete que une a chave primária da venda e a chave primária da Descrição do motivo de venda
 
-      - name: Motivo Tipo
+      - name: Motivo_Tipo
         description: Tipo do motivo de venda
 
 
