@@ -16,7 +16,10 @@ with
 
     ,vendas_enriquecida as (
         select 
-            vendas_cabecalho.pk_id_ordem_de_venda
+            {{ dbt_utils.generate_surrogate_key(
+                ['vendas_cabecalho.pk_id_ordem_de_venda', 'vendas_detalhe.fk_id_produto']
+            ) }} as sk_produto_pedido
+            ,vendas_cabecalho.pk_id_ordem_de_venda
             ,vendas_detalhe.pk_id_vendas_detalhe
             ,vendas_cabecalho.fk_id_cliente
             ,vendas_cabecalho.fk_id_vendedor
@@ -64,7 +67,8 @@ with
 
  , final_select as (
         select
-            pk_id_ordem_de_venda as Nota_Fiscal
+            sk_produto_pedido
+            ,pk_id_ordem_de_venda as Nota_Fiscal
             ,pk_id_vendas_detalhe as ID_Ordem_Pedido
             ,fk_id_cliente as ID_cliente
             ,fk_id_vendedor as ID_Vendedor
@@ -87,7 +91,7 @@ with
             ,vendas_detalhe_preco_unitario as "Preço Venda Unitário"
             ,vendas_detalhe_perc_desconto as "Percentual Desconto"
             ,produto_custo_padrao as "Valor Custo Produto" 
-            ,cast(vendas_valor_bruto as float) as "Valor Total Bruto" --sem desconto
+            ,cast(vendas_valor_bruto as numeric(18,4)) as "Valor Total Bruto" --sem desconto
             ,cast(vendas_valor_liquido as numeric(18,2)) as "Valor Total Líquido" -- com desconto
             ,cast(vendas_margem_bruta as numeric(18,2)) as "Margem Bruta" --sem desconto
             ,cast(vendas_margem_liquida as numeric(18,2)) as "Margem Líquida" -- com desconto
