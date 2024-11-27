@@ -16,7 +16,10 @@ with
 
     ,vendas_enriquecida as (
         select 
-            vendas_cabecalho.pk_id_ordem_de_venda
+            {{ dbt_utils.generate_surrogate_key(
+                ['vendas_cabecalho.pk_id_ordem_de_venda', 'vendas_detalhe.fk_id_produto']
+            ) }} as sk_produto_pedido
+            ,vendas_cabecalho.pk_id_ordem_de_venda
             ,vendas_detalhe.pk_id_vendas_detalhe
             ,vendas_cabecalho.fk_id_cliente
             ,vendas_cabecalho.fk_id_vendedor
@@ -64,7 +67,8 @@ with
 
  , final_select as (
         select
-            pk_id_ordem_de_venda as Nota_Fiscal
+            sk_produto_pedido
+            ,pk_id_ordem_de_venda as Nota_Fiscal
             ,pk_id_vendas_detalhe as ID_Ordem_Pedido
             ,fk_id_cliente as ID_cliente
             ,fk_id_vendedor as ID_Vendedor
